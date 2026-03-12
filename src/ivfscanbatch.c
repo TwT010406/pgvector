@@ -802,7 +802,7 @@ ConvertBatchPipelineResults(IndexScanDesc scan, float** topk_dist, int** topk_in
     
     /* 3. 关键步骤：对 TID 进行排序 */
     /* 这会将访问同一 Page 的请求聚在一起，并使磁盘访问顺序化 */
-    if (valid_items_count > 0) {
+    if (valid_items_count > 0 && ivfflat_batch_enable_sort) {
         qsort(requests, valid_items_count, sizeof(HeapFetchRequest), compare_fetch_requests);
     }
     

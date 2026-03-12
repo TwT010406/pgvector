@@ -82,6 +82,7 @@
 extern int	ivfflat_probes;
 extern int	ivfflat_iterative_scan;
 extern int	ivfflat_max_probes;
+extern bool ivfflat_batch_enable_sort;
 
 typedef enum IvfflatIterativeScanMode
 {
